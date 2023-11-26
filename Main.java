@@ -43,8 +43,8 @@ public class Main
 		    System.out.print("Others: ");
 		    int nonEssential = userInput.nextInt();
 		    
-		    expense e = new expense(essential, nonEssential, date);
-		    
+		    expense e = new expense(date, essential, nonEssential);
+		    e.addRecord("Record.txt");
 		    //System.out.printf("%d %d %s", e.getEssential(), e.getNonEssential(), e.getDate());
 		    
 		}

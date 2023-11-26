@@ -1,13 +1,17 @@
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 class expense{
+    private String date;
     private int essential;
     private int nonEssential;
-    private String date;
     
     // constructor for all variables in add user
-    public expense(int essential, int nonEssential, String date){
+    public expense(String date, int essential, int nonEssential){
+        this.date = date;
         this.essential = essential;
         this.nonEssential = nonEssential;
-        this.date = date;
     }
     
     //return value of date
@@ -23,8 +27,20 @@ class expense{
         return nonEssential;
     }
     
-    public void addRecord(){
-        
+    public void addRecord(String fileName){
+        try{
+            FileWriter file = new FileWriter(fileName);
+            BufferedWriter writer = new BufferedWriter(file);
+            
+            writer.write("Date: " + date + "\n");
+            writer.write("Essential: " + essential + "\n");
+            writer.write("Non-Essential: " + nonEssential + "\n");
+            
+            writer.close();
+        }
+        catch(IOException e) {
+            System.err.println("Error writting to file: " + e.getMessage());
+        }
     }
 }
 
