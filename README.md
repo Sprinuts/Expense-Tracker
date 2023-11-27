@@ -1,3 +1,3 @@
 # Expense-Tracker
-# main and expense java file = jaybert
-# format java file = marion
+update 2:02AM  Nov 28, 2023
+All done except exit
